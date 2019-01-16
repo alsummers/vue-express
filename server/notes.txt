@@ -1,0 +1,9 @@
+NPM Installs for Server
+
+Express
+Body-parser
+cors
+morgan
+
+ESlint
+---- node /node_modules/eslint/bin/eslint.js --init
