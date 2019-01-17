@@ -5,7 +5,10 @@ Body-parser
 cors
 morgan
 
+
 ESlint
 ---- node /node_modules/eslint/bin/eslint.js --init
 
-Axios is a server library
+Axios is a server library for front end
+
+sequelize == ORM to connect SQL databases, useful for relational models
