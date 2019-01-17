@@ -1,0 +1,5 @@
+vue-cli install
+
+vue create <app-name>
+axios
+vuetify

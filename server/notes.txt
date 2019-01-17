@@ -4,7 +4,9 @@ Express
 Body-parser
 cors
 morgan
-
+sequelize
+sqlite3
+joi -- validation framework
 
 ESlint
 ---- node /node_modules/eslint/bin/eslint.js --init
