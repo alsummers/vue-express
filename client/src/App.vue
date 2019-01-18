@@ -1,21 +1,30 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <router-view></router-view>
+    <v-app>
+      <v-content>
+        <site-header/>
+        <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
-
+import SiteHeader from "@/components/Header.vue";
 export default {
-  name: 'app',
-
-}
+  name: "app",
+  components: {
+    SiteHeader
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
