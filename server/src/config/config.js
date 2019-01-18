@@ -9,5 +9,8 @@ module.exports = {
       host: process.env.HOST || 'localhost',
       storage: './vueExpress.sqlite'
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secretstring123'
   }
 }

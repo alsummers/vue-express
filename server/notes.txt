@@ -7,6 +7,14 @@ morgan
 sequelize
 sqlite3
 joi -- validation framework
+jwt (json webtoken)
+
+==========
+*** not working right now
+bcrypt
+bluebird for Promisfyall functionality for bcrypt
+==========
+
 
 ESlint
 ---- node /node_modules/eslint/bin/eslint.js --init

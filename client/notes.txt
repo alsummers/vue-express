@@ -1,5 +1,11 @@
 vue-cli install
 
 vue create <app-name>
+
+vue-router (import in main.js)
 axios
 vuetify
+
+vuex (like redux) == flux implementation
+
+vuex-sync-router

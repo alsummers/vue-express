@@ -11,11 +11,11 @@
 
         <v-spacer></v-spacer>
 
-    <v-toolbar-items>
-        <router-link class="route" to="/login"><v-btn class="btn" flat dark>
+    <v-toolbar-items >
+        <router-link class="route" to="/login"><v-btn v-if="!$store.state.isUserLoggedIn" class="btn" flat dark>
             Login
         </v-btn></router-link>
-        <router-link class="route" to="/register"><v-btn class="btn" flat dark>
+        <router-link class="route" to="/register"><v-btn v-if="!$store.state.isUserLoggedIn" class="btn" flat dark>
             Sign Up
         </v-btn></router-link>
     </v-toolbar-items>
