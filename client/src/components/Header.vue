@@ -5,13 +5,13 @@
         <span class="white--text">Vue Music Tracker</span>
       </router-link>
     </v-toolbar-title>
-    <v-toolbar-items>
+    <v-toolbar-items class="mt-3">
       <router-link class="route" to="/songs"><v-btn class="btn" flat dark>Browse</v-btn></router-link>
     </v-toolbar-items>
 
     <v-spacer></v-spacer>
 
-    <v-toolbar-items>
+    <v-toolbar-items class="mt-3">
       <router-link class="route" to="/login">
         <v-btn v-if="!$store.state.isUserLoggedIn" class="btn" flat dark>Login</v-btn>
       </router-link>

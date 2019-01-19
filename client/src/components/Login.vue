@@ -1,4 +1,6 @@
 <template>
+<v-layout row wrap>
+  <v-flex xs6 offset-xs3>
   <panel title="Login">
           <v-text-field
             label="email"
@@ -13,6 +15,8 @@
         <br>
         <v-btn class="cyan darken-2" @click="login" dark>Login</v-btn>
   </panel>
+  </v-flex>
+</v-layout>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 import Api from '@/services/Api'
 
 export default {
-    songIndex (credentials){
+    songIndex (){
         return Api().get('songs')
     },
     

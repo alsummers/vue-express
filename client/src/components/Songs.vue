@@ -1,4 +1,6 @@
 <template>
+<v-layout row wrap>
+  <v-flex xs6 offset-xs3>
   <panel title="Songs">
     <div v-for="song in songs" :key="song.id">
         {{song.title}} -
@@ -6,6 +8,8 @@
         {{song.album}}
     </div>
   </panel>
+  </v-flex>
+</v-layout>
 </template>
 
 <script>

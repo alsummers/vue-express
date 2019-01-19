@@ -1,6 +1,4 @@
 <template>
-  <v-layout row wrap>
-    <v-flex xs6 offset-xs3>
       <v-card>
       <div class="white elevation-2">
         <v-toolbar flat dense class="cyan darken-2" dark>
@@ -14,8 +12,6 @@
 
       </div>
       </v-card>
-    </v-flex>
-  </v-layout>
 </template>
 
 <script>

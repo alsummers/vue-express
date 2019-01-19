@@ -1,4 +1,6 @@
 <template>
+  <v-layout row wrap>
+    <v-flex xs6 offset-xs3>
 <panel title="Register">
 
         <form name="register-form" autocomplete="off">
@@ -16,6 +18,8 @@
         <br>
         <v-btn class="cyan darken-2" @click="register" dark>Register</v-btn>
 </panel>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
