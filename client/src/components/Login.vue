@@ -1,13 +1,5 @@
 <template>
-  <v-layout row wrap>
-    <v-flex xs6 offset-xs3>
-      <v-card>
-      <div class="white elevation-2">
-        <v-toolbar flat dense class="cyan darken-2" dark>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
-      </div>
-      <div class="pl-4 pr-4 pb-2 pt-4">
+  <panel title="Login">
           <v-text-field
             label="email"
             v-model="email"
@@ -20,13 +12,11 @@
         <div class="error" v-html="error"/>
         <br>
         <v-btn class="cyan darken-2" @click="login" dark>Login</v-btn>
-      </div>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  </panel>
 </template>
 
 <script>
+import Panel from "@/components/Panel";
 import Authentication from "@/services/Authentication";
 export default {
   data() {
@@ -57,6 +47,9 @@ export default {
         this.error = error.response.data.error;
       }
     }
+  },
+  components: {
+    Panel
   },
   mounted() {
     // setTimeout(() => {
