@@ -11,7 +11,12 @@
         <br>
         <v-text-field type="password" label="password" v-model="password" placeholder="password" solo></v-text-field>
         <br>
-        <div class="error" v-html="error"/>
+        <v-alert
+        :value="error"
+        transition="scale-transition"
+        error>
+        {{error}}
+</v-alert>
         <br>
         <v-btn class="cyan darken-2" @click="login" dark>Login</v-btn>
   </panel>
@@ -64,7 +69,5 @@ export default {
 </script>
 
 <style scoped>
-.error {
-  color: red;
-}
+
 </style>

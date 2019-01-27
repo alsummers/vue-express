@@ -4,5 +4,8 @@ export default {
     songIndex (){
         return Api().get('songs')
     },
+    post (song) {
+        return Api().post('songs', song)
+    }
     
 }

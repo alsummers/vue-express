@@ -14,7 +14,12 @@
         <v-text-field autocomplete="new-password" type="password" label="password" v-model="password" placeholder="password" solo></v-text-field>
         </form>
         <br>
-        <div class="error" v-html="error"/>
+        <v-alert
+        :value="error"
+        transition="scale-transition"
+        error>
+        {{error}}
+</v-alert>
         <br>
         <v-btn class="cyan darken-2" @click="register" dark>Register</v-btn>
 </panel>
