@@ -15,14 +15,8 @@
         <v-textarea :rules="[required]" label="lyrics" v-model="song.lyrics" solo></v-textarea>
         <v-textarea :rules="[required]" label="tab" v-model="song.tab" solo></v-textarea>
       </panel>
-      <v-alert
-        class="ml-2"
-        :value="error"
-        transition="scale-transition"
-        error>
-        {{error}}
-</v-alert>
-      <v-btn dark class="cyan darken-2" @click="create">Create Song</v-btn>
+      <v-alert class="ml-2" :value="error" transition="scale-transition" error>{{error}}</v-alert>
+      <v-btn dark class="cyan darken-2" @click="save">Save Song</v-btn>
     </v-flex>
   </v-layout>
 </template>
@@ -48,19 +42,30 @@ export default {
     };
   },
   methods: {
-    async create() {
+    async save() {
       this.error = null;
       const allFields = Object.keys(this.song).every(key => !!this.song[key]);
       if (!allFields) {
         this.error = "Please fill in all fields";
         return;
       }
-      try {
-        await SongsService.post(this.song);
-        this.$router.push("/songs");
-      } catch (err) {
+      const songId = this.$store.state.route.params.songId;
+      try{
+        await SongsService.put(this.song)
+        this.$router.push({
+          name: 'song',
+          params: {
+            songId: songId
+          }
+        })
+      } catch {
+
       }
     }
+  },
+  async mounted (){
+    const songId = this.$store.state.route.params.songId;
+    this.song = (await SongsService.show(songId)).data;
   },
   components: {
     Panel

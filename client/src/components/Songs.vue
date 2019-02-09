@@ -3,7 +3,7 @@
     <v-flex xs6 offset-xs3>
       <panel title="Songs">
         <v-btn
-          to="/songs/create"
+          to="/create"
           slot="action"
           class="cyan accent-1"
           fab

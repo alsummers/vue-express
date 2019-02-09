@@ -9,3 +9,4 @@ vuetify
 vuex (like redux) == flux implementation
 
 vuex-sync-router
+vue-youtube-embed
