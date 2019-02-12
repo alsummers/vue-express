@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import Panel from "@/components/Panel";
 import SongsService from "@/services/SongService";
 export default {
   data() {
@@ -59,7 +58,7 @@ export default {
           }
         })
       } catch {
-
+        this.error = "failed to update song"
       }
     }
   },
@@ -67,9 +66,7 @@ export default {
     const songId = this.$store.state.route.params.songId;
     this.song = (await SongsService.show(songId)).data;
   },
-  components: {
-    Panel
-  }
+
 };
 </script>
 

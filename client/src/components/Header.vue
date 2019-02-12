@@ -1,7 +1,7 @@
 <template>
   <v-toolbar fixed class="cyan darken-2" dark>
     <v-toolbar-title class="mr-4">
-      <router-link class="titleRoute" to="/">
+      <router-link class="titleRoute" to="/songs">
         <span class="white--text">Vue Music Tracker</span>
       </router-link>
     </v-toolbar-title>
@@ -26,7 +26,7 @@ export default {
             this.$store.dispatch('setToken', null)
             this.$store.dispatch('setUser', null)
             // redirect to home
-            this.$router.push('/')
+            this.$router.push('/songs')
         }
     }
 };

@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import Panel from "@/components/Panel";
 import SongsService from "@/services/SongService";
 export default {
   data() {
@@ -59,12 +58,12 @@ export default {
         await SongsService.post(this.song);
         this.$router.push("/songs");
       } catch (err) {
+        return err
       }
+
     }
   },
-  components: {
-    Panel
-  }
+
 };
 </script>
 
