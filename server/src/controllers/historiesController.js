@@ -23,7 +23,7 @@ module.exports = {
           history.Song,
           history
         ))
-      res.send(histories)
+      res.send(_.uniqBy(histories, history => history.SongId))
     } catch (err) {
       res.status(500).send({
         error: 'cannot retreive history'
@@ -31,7 +31,6 @@ module.exports = {
     }
   },
   async post (req, res) {
-    console.log(req)
     try {
       const { songId, userId } = req.body
       const history = await History.create({
