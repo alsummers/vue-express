@@ -33,48 +33,13 @@ export default {
   },
   props: ["song"],
   // replaces $store.state in line
-  computed: {
-    ...mapState(["isUserLoggedIn"])
+   computed: {
+    ...mapState([
+      'isUserLoggedIn',
+      'user'
+    ])
   },
-  watch: {
-    async song (){
-      if(!this.isUserLoggedIn) {
-      return
-    }
-    try {
-    this.bookmark = (await BookmarksService.index({
-      songId: this.song.id,
-      userId: this.$store.state.user.id
-    })).data;
- // !!bookmark turns variable into false boolean
-    } catch (err) {
-      console.log(err)
-      return
-    }
-    }
-  },
-  methods: {
-    async setBookmark() {
-      try {
-        this.bookmark = (await BookmarksService.post({
-          SongId: this.song.id,
-          UserId: this.$store.state.user.id
-        })).data;
-      } catch (err) {
-        console.log(err)
-        return;
-      }
-    },
-    async unbookmark() {
-      try {
-        await BookmarksService.delete(this.bookmark.id)
-        this.bookmark = null
-      } catch (err) {
-        console.log(err)
-        return;
-      }
-    }
-  }
+  
 };
 </script>
 

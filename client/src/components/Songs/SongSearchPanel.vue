@@ -15,7 +15,7 @@ export default {
     watch: {
         search: _.debounce(async function (value) {
             const route = {
-                name: 'songs'
+                path: 'songs'
             }
             if (this.search !== ''){
                 route.query = {
