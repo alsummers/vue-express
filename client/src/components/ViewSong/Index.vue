@@ -45,10 +45,10 @@ export default {
     this.song = (await SongService.show(songId)).data;
 
     if (this.isUserLoggedIn) {
-    HistoryService.post({
-      songId: songId,
-      userId: this.user.id
-    })
+      HistoryService.post({
+        songId: songId,
+        userId: this.user.id
+      })
     }
   },
   components: {

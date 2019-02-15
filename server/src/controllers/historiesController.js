@@ -31,8 +31,9 @@ module.exports = {
     }
   },
   async post (req, res) {
+    console.log(req)
     try {
-      const { songId, userId } = req.body.params
+      const { songId, userId } = req.body
       const history = await History.create({
         SongId: songId,
         UserId: userId
