@@ -1,7 +1,6 @@
 <template>
   <v-layout>
     <v-flex xs6>
-      <song-bookmarks />
     </v-flex>
     <v-flex xs6 class="ml-2">
       <song-search-panel />
@@ -14,12 +13,10 @@
 import SongPanel from './SongPanel'
 import SongSearchPanel from './SongSearchPanel'
 import SongService from "@/services/SongService"
-import SongBookmarks from './SongBookmarks'
 export default {
   components: {
     SongPanel,
     SongSearchPanel,
-    SongBookmarks
   },
   data() {
     return {

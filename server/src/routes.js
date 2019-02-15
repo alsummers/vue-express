@@ -10,6 +10,6 @@ module.exports = (app) => {
   app.post('/songs', songsController.post)
   app.put('/songs/:songId', songsController.put)
   app.get('/bookmarks', BookmarksController.index)
-  // app.post('/bookmarks', BookmarksController.post)
-  // app.delete('/bookmarks/:bookmarkId', BookmarksController.delete)
+  app.post('/bookmarks', BookmarksController.post)
+  app.delete('/bookmarks/:bookmarkId', BookmarksController.delete)
 }
