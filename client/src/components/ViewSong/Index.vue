@@ -25,15 +25,31 @@ import SongMetadata from './SongMetadata'
 import YouTubePanel from './Youtube'
 import Lyrics from './Lyrics'
 import Tabs from './Tabs'
+import HistoryService from '@/services/HistoryService'
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
       song: {}
     };
   },
+  computed: {
+    ...mapState([
+      'isUserLoggedIn',
+      'user',
+      'route'
+    ])
+  },
   async mounted() {
-    const songId = this.$store.state.route.params.songId;
+    const songId = this.route.params.songId;
     this.song = (await SongService.show(songId)).data;
+
+    if (this.isUserLoggedIn) {
+    HistoryService.post({
+      songId: songId,
+      userId: this.user.id
+    })
+    }
   },
   components: {
     SongMetadata,
